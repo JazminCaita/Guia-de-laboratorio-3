@@ -1,0 +1,16 @@
+% Paso 1: Declarar y inicializar las matrices A y B
+A = randi([0,10], 4, 4)
+B = randi([0,10], 4, 4)
+
+% Paso 2: Realizar operaciones entre matrices y operaciones elemento a elemento
+% Operaciones entre matrices
+C1 = A + B
+C2 = A - B
+C3 = A * B
+C4 = inv(A) * B
+C5 = A * inv(B)
+
+% Operaciones elemento a elemento
+D1 = A .* B
+D2 = B .* A
+D3 = A .^ 2
