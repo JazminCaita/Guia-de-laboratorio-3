@@ -1,0 +1,35 @@
+% Definir el rango de valores de x
+x = linspace(0, 10, 1000);
+
+% Definir las funciones
+f = exp(x)./100 + 100*sin(x);
+g = x.^3 - 10*x.^2 + 5*x + 20;
+
+% Crear nueva figura
+figure;
+
+% Subplot para la primera función
+subplot(2, 1, 1);
+plot(x, f, 'b', 'LineWidth', 1.5); % Grafica f(x) en azul
+title('f(x) = e^x/100 + 100 * sin(x)');
+xlabel('Eje x');
+ylabel('Eje y');
+grid on;
+xlim([0, 10]);
+ylim([-200, 300]);
+
+% Subplot para la segunda función
+subplot(2, 1, 2);
+plot(x, g, 'r', 'LineWidth', 1.5); % Grafica g(x) en rojo
+title('g(x) = x^3 - 10x^2 + 5x + 20');
+xlabel('Eje x');
+ylabel('Eje y');
+grid on;
+xlim([0, 10]);
+ylim([-200, 300]);
+
+% Línea horizontal en y=0 para el primer subplot
+subplot(2, 1, 1);
+hold on;
+line([0, 10], [0, 0], 'Color', 'k', 'LineStyle', '--');
+hold off;
