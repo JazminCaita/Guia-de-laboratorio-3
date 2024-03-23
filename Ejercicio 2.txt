@@ -1,0 +1,55 @@
+% Definir el rango de valores de x
+x = linspace(-10, 10, 40);
+
+% Calcular los valores de las funciones
+abs_x = abs(x);
+sqrt_x = sqrt(abs(x)); % Tomamos el valor absoluto para asegurar que sqrt no sea imaginario
+cos_x = cos(x);
+exp_x = exp(x);
+log10_x = log10(abs(x)); % Tomamos el valor absoluto para evitar logaritmo de números negativos
+
+% Crear nueva figura
+figure;
+
+% Subplot para |x|
+subplot(3, 2, 1);
+plot(x, abs_x, 'b', 'LineWidth', 1.5);
+title('|x|');
+xlabel('x');
+ylabel('y');
+grid on;
+
+% Subplot para sqrt(x)
+subplot(3, 2, 2);
+plot(x, sqrt_x, 'r', 'LineWidth', 1.5);
+title('√x');
+xlabel('x');
+ylabel('y');
+grid on;
+
+% Subplot para cos(x)
+subplot(3, 2, 3);
+plot(x, cos_x, 'g', 'LineWidth', 1.5);
+title('cos(x)');
+xlabel('x');
+ylabel('y');
+grid on;
+
+% Subplot para exp(x)
+subplot(3, 2, 4);
+plot(x, exp_x, 'm', 'LineWidth', 1.5);
+title('e^x');
+xlabel('x');
+ylabel('y');
+grid on;
+
+% Subplot para log10(x)
+subplot(3, 2, [5,6]);
+plot(x, log10_x, 'c', 'LineWidth', 1.5);
+title('log_{10}(x)');
+xlabel('x');
+ylabel('y');
+grid on;
+
+% Ajustar los gráficos para mejorar la visualización
+sgtitle('Gráficas de las funciones');
