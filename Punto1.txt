@@ -1,0 +1,6 @@
+M = magic(4)
+F = max(M, [], 2)  
+C=mean(M)
+n = numel(M)
+B = sort(M)
+e=M(3,2)
