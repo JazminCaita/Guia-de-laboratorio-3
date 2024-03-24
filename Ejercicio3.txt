@@ -1,0 +1,23 @@
+% Leer datos del archivo EDF y metadatos
+data = edfread('r01.edf');
+celda = cell2mat(data{2,2});
+
+% Crear eje temporal (segundos)
+x = linspace(0, 5, length(celda));
+
+% Graficar señal ECG fetal
+figure;
+plot(x, celda);
+xlabel('Tiempo (segundos)');
+ylabel('Amplitud (microvoltios)');
+title('Señal de ECG fetal');
+
+% Añadir líneas verticales en instantes de picos QRS (sustituir con los instantes reales)
+picos_QRS = [1.2, 2.7, 4.1]; % Ejemplo de instantes de picos QRS (en segundos)
+hold on;
+for i = 1:length(picos_QRS)
+    linea_vertical = [picos_QRS(i), picos_QRS(i)];
+    ylims = get(gca, 'YLim');
+    plot(linea_vertical, ylims, 'r--'); % Línea roja discontinua
+end
+hold off;
