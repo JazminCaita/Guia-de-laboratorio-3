@@ -1,0 +1,14 @@
+disp("esta es la matriz");
+
+A=randi([0,10],4,4)
+B=randi([0,10],4,4)
+S= A+B
+R= A-B
+M= A*B
+OP1= inv(A)*B
+OP2= A* inv(B)
+OP3= A.^2
+D1= A/B
+P=dot(A,B)
+D2= B/A
+OP4= A.^B
